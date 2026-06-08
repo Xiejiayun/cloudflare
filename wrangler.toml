@@ -1,0 +1,10 @@
+name = "apps"
+compatibility_date = "2026-05-20"
+
+[assets]
+directory = "apps"
+not_found_handling = "404-page"
+
+[[routes]]
+pattern = "apps.jeremyxie.com"
+custom_domain = true

@@ -1,25 +1,35 @@
 # cloudflare
 
-This repository contains Cloudflare deploy targets.
+This repository contains Cloudflare Workers deploy targets.
 
-## Apps Pages
+## Apps Worker
 
-The `apps` folder is a minimal static site that can be deployed directly with
-Cloudflare Pages.
+The `apps` folder is a minimal static site deployed as a Cloudflare Worker with
+Static Assets.
 
-Cloudflare Pages settings:
+Cloudflare Worker settings:
 
-- Project name: `apps`
-- Root directory: `apps`
+- Worker name: `apps`
+- Root directory: repository root
 - Build command: leave empty
-- Build output directory: `.`
-- Build watch paths include: `apps/**`
+- Deploy command: `npx wrangler deploy`
+- Static assets directory: `apps`
+- Custom domain: `apps.jeremyxie.com`
 
-With those settings, commits that change files under `apps/` trigger the
-Cloudflare Pages deployment for the `apps` project.
+The root `wrangler.toml` points Cloudflare Workers at the `apps` directory and
+binds the Worker to the custom domain.
+
+For a local dry run:
+
+```sh
+npx wrangler deploy --dry-run
+```
 
 For manual deployment with Wrangler:
 
 ```sh
-npx wrangler pages deploy apps --project-name apps
+npx wrangler deploy
 ```
+
+Manual Wrangler deploys require `wrangler login` or a `CLOUDFLARE_API_TOKEN`
+environment variable.
