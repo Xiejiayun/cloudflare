@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Apps Pages</title>
+    <title>Jeremy Xie Apps</title>
     <meta
       name="description"
-      content="A minimal static site ready for Cloudflare Pages deployment."
+      content="Privacy policies and support pages for Jeremy Xie apps."
     />
+    <link rel="icon" href="data:," />
     <style>
       :root {
         color-scheme: light dark;
@@ -25,19 +26,18 @@
       body {
         min-height: 100vh;
         margin: 0;
-        display: grid;
-        place-items: center;
-        padding: 32px;
+        padding: 48px 24px;
       }
 
       main {
-        width: min(100%, 720px);
+        width: min(100%, 880px);
+        margin: 0 auto;
       }
 
       h1 {
-        margin: 0 0 16px;
-        font-size: clamp(2.25rem, 6vw, 4.5rem);
-        line-height: 1;
+        margin: 0 0 12px;
+        font-size: clamp(2rem, 6vw, 3.75rem);
+        line-height: 1.05;
         letter-spacing: 0;
       }
 
@@ -49,25 +49,71 @@
         color: #4c5963;
       }
 
+      .app-list {
+        display: grid;
+        gap: 16px;
+        margin-top: 36px;
+      }
+
+      .app-link {
+        display: block;
+        padding: 20px;
+        border: 1px solid #d8cdc0;
+        border-radius: 8px;
+        color: inherit;
+        text-decoration: none;
+        background: #fffaf2;
+      }
+
+      .app-link:hover {
+        border-color: #c08f25;
+      }
+
+      .app-link strong {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 1.25rem;
+      }
+
+      .app-link span {
+        display: block;
+        color: #4c5963;
+        line-height: 1.6;
+      }
+
       @media (prefers-color-scheme: dark) {
         :root {
           background: #11161c;
           color: #f4f0e8;
         }
 
-        p {
+        p,
+        .app-link span {
           color: #bbc6d0;
+        }
+
+        .app-link {
+          border-color: #2c3742;
+          background: #171e26;
+        }
+
+        .app-link:hover {
+          border-color: #d8a13a;
         }
       }
     </style>
   </head>
   <body>
     <main>
-      <h1>Apps Pages</h1>
-      <p>
-        This static site lives in the apps folder and is ready to deploy with
-        Cloudflare Pages.
-      </p>
+      <h1>Jeremy Xie Apps</h1>
+      <p>应用隐私政策、支持信息和相关说明。</p>
+
+      <div class="app-list" aria-label="Apps">
+        <a class="app-link" href="./friestodo/">
+          <strong>薯条清单 FriesTodo</strong>
+          <span>隐私政策与支持信息</span>
+        </a>
+      </div>
     </main>
   </body>
 </html>
