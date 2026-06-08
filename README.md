@@ -19,6 +19,18 @@ Cloudflare Worker settings:
 The root `wrangler.toml` points Cloudflare Workers at the `apps` directory and
 binds the Worker to the custom domain.
 
+## Automatic Deployment
+
+GitHub Actions deploys the Worker automatically when changes are pushed to
+`main` under `apps/**`, `wrangler.toml`, or the deployment workflow itself.
+
+Required GitHub repository secrets:
+
+- `CLOUDFLARE_ACCOUNT_ID`
+- `CLOUDFLARE_API_TOKEN`
+
+The workflow is defined in `.github/workflows/deploy-worker.yml`.
+
 For a local dry run:
 
 ```sh
