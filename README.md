@@ -21,15 +21,19 @@ binds the Worker to the custom domain.
 
 ## Automatic Deployment
 
-GitHub Actions deploys the Worker automatically when changes are pushed to
-`main` under `apps/**`, `wrangler.toml`, or the deployment workflow itself.
+Cloudflare Workers Builds deploys the Worker automatically when changes are
+pushed to `main` under `apps/**` or `wrangler.toml`.
 
-Required GitHub repository secrets:
+Cloudflare build settings:
 
-- `CLOUDFLARE_ACCOUNT_ID`
-- `CLOUDFLARE_API_TOKEN`
+- Build command: `true`
+- Deploy command: `npx wrangler deploy`
+- Root directory: `/`
+- Production branch: `main`
+- Included paths: `apps/**`, `wrangler.toml`
 
-The workflow is defined in `.github/workflows/deploy-worker.yml`.
+The GitHub Actions workflow in `.github/workflows/deploy-worker.yml` remains
+available as a manual backup via `workflow_dispatch`.
 
 For a local dry run:
 
