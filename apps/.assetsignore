@@ -1,2 +1,3 @@
+# Keep local Wrangler cache out of deployed static assets.
 .wrangler/
 .DS_Store
