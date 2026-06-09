@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>薯条清单 FriesTodo 隐私政策</title>
+    <title>隐私政策 | 薯条清单 FriesTodo</title>
     <meta
       name="description"
       content="薯条清单 FriesTodo 的隐私政策与支持信息。本应用不需要账号，不包含广告，不使用追踪，任务数据保存在设备本地。"
@@ -16,7 +16,7 @@
         font-family:
           Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
           "Segoe UI", sans-serif;
-        background: #f8f3eb;
+        background: #f6f7f4;
         color: #172027;
       }
 
@@ -36,16 +36,51 @@
 
       header {
         padding: 12px 0 28px;
-        border-bottom: 1px solid #ded2c4;
+        border-bottom: 1px solid #dfe3dc;
       }
 
       a {
-        color: #8b5d00;
+        color: #217346;
+      }
+
+      .hero-brand {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        margin-bottom: 24px;
+      }
+
+      .app-icon {
+        width: 72px;
+        height: 72px;
+        flex: 0 0 auto;
+        border: 1px solid rgba(23, 32, 39, 0.08);
+        border-radius: 18px;
+        box-shadow: 0 10px 28px rgba(89, 56, 28, 0.16);
+      }
+
+      .brand-copy {
+        min-width: 0;
+      }
+
+      .app-name {
+        margin: 0;
+        color: #172027;
+        font-size: 1.12rem;
+        font-weight: 800;
+        line-height: 1.35;
+      }
+
+      .document-label {
+        margin: 4px 0 0;
+        color: #5f6c65;
+        font-size: 0.96rem;
+        line-height: 1.45;
       }
 
       h1 {
         margin: 0;
-        font-size: clamp(2.1rem, 7vw, 4.5rem);
+        font-size: clamp(2.2rem, 6vw, 3.8rem);
         line-height: 1.05;
         letter-spacing: 0;
       }
@@ -68,9 +103,9 @@
       .summary div {
         min-height: 88px;
         padding: 16px;
-        border: 1px solid #ded2c4;
+        border: 1px solid #dfe3dc;
         border-radius: 8px;
-        background: #fffaf3;
+        background: #ffffff;
       }
 
       .summary strong {
@@ -87,7 +122,7 @@
 
       section {
         padding: 26px 0;
-        border-bottom: 1px solid #ded2c4;
+        border-bottom: 1px solid #dfe3dc;
       }
 
       h2 {
@@ -131,26 +166,42 @@
         align-items: center;
         justify-content: center;
         padding: 0 16px;
-        border: 1px solid #c68d18;
+        border: 1px solid #216e49;
         border-radius: 8px;
-        background: #ffd567;
-        color: #172027;
+        background: #217346;
+        color: #ffffff;
         font-weight: 700;
         text-decoration: none;
       }
 
       .english-summary {
         padding: 18px;
-        border: 1px solid #ded2c4;
+        border: 1px solid #dfe3dc;
         border-radius: 8px;
-        background: #fffaf3;
+        background: #ffffff;
       }
 
       footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px 28px;
+        justify-content: space-between;
         padding-top: 24px;
         color: #697782;
         font-size: 0.92rem;
         line-height: 1.7;
+      }
+
+      .footer-brand,
+      .footer-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 14px;
+        align-items: center;
+      }
+
+      .footer-brand strong {
+        color: #34424c;
       }
 
       @media (max-width: 720px) {
@@ -164,6 +215,17 @@
       }
 
       @media (max-width: 460px) {
+        .hero-brand {
+          gap: 12px;
+          margin-bottom: 22px;
+        }
+
+        .app-icon {
+          width: 58px;
+          height: 58px;
+          border-radius: 14px;
+        }
+
         .summary {
           grid-template-columns: 1fr;
         }
@@ -181,9 +243,19 @@
         }
 
         a {
-          color: #f2c158;
+          color: #8ee0aa;
         }
 
+        .app-icon {
+          border-color: rgba(246, 240, 232, 0.12);
+          box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
+        }
+
+        .app-name {
+          color: #f6f0e8;
+        }
+
+        .document-label,
         .subtitle,
         .summary span,
         p,
@@ -203,9 +275,13 @@
         }
 
         .button-link {
-          border-color: #f2c158;
-          background: #f2c158;
+          border-color: #8ee0aa;
+          background: #8ee0aa;
           color: #10161d;
+        }
+
+        .footer-brand strong {
+          color: #f6f0e8;
         }
       }
     </style>
@@ -213,7 +289,20 @@
   <body>
     <main>
       <header>
-        <h1>薯条清单 FriesTodo 隐私政策</h1>
+        <div class="hero-brand">
+          <img
+            class="app-icon"
+            src="/friestodo/app-icon.png"
+            width="72"
+            height="72"
+            alt="薯条清单 FriesTodo App 图标"
+          />
+          <div class="brand-copy">
+            <p class="app-name">薯条清单 FriesTodo</p>
+            <p class="document-label">在线隐私政策</p>
+          </div>
+        </div>
+        <h1>隐私政策</h1>
         <p class="subtitle">
           薯条清单是一款本地优先的极简任务清单应用。我们尊重你的隐私，并将数据处理限制在提供核心功能所必需的范围内。
         </p>
@@ -238,21 +327,21 @@
       </header>
 
       <section aria-labelledby="overview">
-        <h2 id="overview">隐私政策</h2>
+        <h2 id="overview">政策概述</h2>
         <p>
           你创建、编辑、完成或删除的任务内容用于展示今日清单、完成进度和历史记录。本应用不要求注册账号，不收集姓名、电话号码、通讯录、精确位置、照片、相机、麦克风或其他与任务清单无关的个人信息。
         </p>
       </section>
 
       <section aria-labelledby="collection">
-        <h2 id="collection">数据收集</h2>
+        <h2 id="collection">不会收集的数据</h2>
         <p>
           薯条清单不集成广告、第三方分析工具、崩溃报告 SDK、社交登录、归因服务或跨应用追踪技术。应用不会收集、出售、出租或向第三方共享你的任务内容。
         </p>
       </section>
 
       <section aria-labelledby="storage">
-        <h2 id="storage">本地存储与系统备份</h2>
+        <h2 id="storage">本地存储</h2>
         <p>
           任务数据、应用偏好和首次使用日期等信息默认保存在当前设备的应用本地存储中。除非你主动删除任务或卸载应用，这些数据会保留在设备上。
         </p>
@@ -300,9 +389,15 @@
       </section>
 
       <footer>
-        <span>薯条清单 FriesTodo</span>
-        <br />
-        <span>Privacy Policy and Support</span>
+        <div class="footer-brand">
+          <strong>薯条清单 FriesTodo</strong>
+          <span>隐私政策</span>
+        </div>
+        <div class="footer-meta">
+          <span>生效日期：2026年6月8日</span>
+          <span>支持：<a href="mailto:furnace09@gmail.com">furnace09@gmail.com</a></span>
+          <span>© 2026 Jeremy Xie</span>
+        </div>
       </footer>
     </main>
   </body>
