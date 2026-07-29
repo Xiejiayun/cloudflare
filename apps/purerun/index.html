@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>隐私政策与支持 | PureRun</title>
+    <meta
+      name="description"
+      content="PureRun 的隐私政策与支持信息。跑步与设置数据保存在设备本地；无需账号，不含广告、分析或追踪。"
+    >
+    <link rel="icon" type="image/png" href="/purerun/app-icon.png">
+    <link rel="apple-touch-icon" href="/purerun/app-icon.png">
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC",
+          "Segoe UI", sans-serif;
+        background: #f3f6f7;
+        color: #14212a;
+        --background: #f3f6f7;
+        --surface: #ffffff;
+        --surface-quiet: #eaf0f2;
+        --text: #14212a;
+        --muted: #536570;
+        --line: #cbd6dc;
+        --accent: #bd3d2c;
+        --accent-strong: #9d2c20;
+        --teal: #187d73;
+        --shadow: rgba(30, 51, 63, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        background:
+          radial-gradient(circle at 78% 4%, rgba(255, 98, 71, 0.13), transparent 27rem),
+          var(--background);
+        color: var(--text);
+      }
+
+      a {
+        color: var(--accent-strong);
+        text-underline-offset: 0.2em;
+      }
+
+      a:focus-visible {
+        border-radius: 4px;
+        outline: 3px solid var(--teal);
+        outline-offset: 4px;
+      }
+
+      .page {
+        width: min(100% - 40px, 960px);
+        margin: 0 auto;
+        padding: 28px 0 64px;
+      }
+
+      .utility-bar {
+        display: flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        font-size: 0.92rem;
+      }
+
+      .utility-bar a {
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .language-links {
+        display: flex;
+        gap: 18px;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        margin-top: 18px;
+        padding: clamp(28px, 6vw, 64px);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: color-mix(in srgb, var(--surface) 94%, transparent);
+        box-shadow: 0 24px 70px var(--shadow);
+      }
+
+      .route-mark {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: min(48%, 420px);
+        height: 100%;
+        opacity: 0.72;
+        pointer-events: none;
+      }
+
+      .route-glow {
+        fill: none;
+        stroke: color-mix(in srgb, var(--accent) 18%, transparent);
+        stroke-linecap: round;
+        stroke-width: 22;
+      }
+
+      .route-line {
+        fill: none;
+        stroke: var(--accent);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 4;
+      }
+
+      .route-point {
+        fill: var(--surface);
+        stroke: var(--accent);
+        stroke-width: 4;
+      }
+
+      .brand {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .app-icon {
+        width: 72px;
+        height: 72px;
+        flex: 0 0 auto;
+        border: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
+        border-radius: 18px;
+        box-shadow: 0 12px 30px rgba(61, 30, 25, 0.18);
+      }
+
+      .eyebrow,
+      .section-label {
+        margin: 0;
+        color: var(--accent-strong);
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+        font-size: 0.78rem;
+        font-weight: 750;
+        letter-spacing: 0.12em;
+        line-height: 1.5;
+        text-transform: uppercase;
+      }
+
+      .app-name {
+        margin: 4px 0 0;
+        font-family: ui-rounded, "SF Pro Rounded", -apple-system, sans-serif;
+        font-size: 1.2rem;
+        font-weight: 800;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: ui-rounded, "SF Pro Rounded", -apple-system, sans-serif;
+        letter-spacing: -0.025em;
+      }
+
+      h1 {
+        position: relative;
+        z-index: 1;
+        max-width: 12ch;
+        margin: 42px 0 0;
+        font-size: clamp(2.55rem, 8vw, 5.6rem);
+        line-height: 0.98;
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 1;
+        max-width: 58ch;
+        margin: 24px 0 0;
+        color: var(--muted);
+        font-size: clamp(1rem, 2vw, 1.18rem);
+        line-height: 1.8;
+      }
+
+      .fact-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin-top: 38px;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .fact {
+        min-width: 0;
+        padding: 18px 16px;
+        border-right: 1px solid var(--line);
+      }
+
+      .fact:first-child {
+        padding-left: 0;
+      }
+
+      .fact:last-child {
+        padding-right: 0;
+        border-right: 0;
+      }
+
+      .fact strong,
+      .fact span {
+        display: block;
+      }
+
+      .fact strong {
+        margin-bottom: 6px;
+        font-size: 0.98rem;
+      }
+
+      .fact span {
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.55;
+      }
+
+      .jump-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 28px 0 0;
+      }
+
+      .jump-links a {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        padding: 0 15px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--surface);
+        color: var(--text);
+        font-size: 0.92rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .jump-links a:hover {
+        border-color: var(--accent);
+        color: var(--accent-strong);
+      }
+
+      article {
+        margin-top: 72px;
+      }
+
+      .article-header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 24px;
+        align-items: end;
+        padding-bottom: 20px;
+        border-bottom: 2px solid var(--text);
+      }
+
+      .article-header h2 {
+        margin: 8px 0 0;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        line-height: 1;
+      }
+
+      .effective-date {
+        margin: 0;
+        color: var(--muted);
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+        font-size: 0.84rem;
+      }
+
+      .policy-section {
+        display: grid;
+        grid-template-columns: minmax(180px, 0.34fr) minmax(0, 0.66fr);
+        gap: clamp(24px, 5vw, 64px);
+        padding: 34px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .policy-section h3 {
+        margin: 0;
+        font-size: 1.28rem;
+        line-height: 1.25;
+      }
+
+      .policy-section p,
+      .policy-section li {
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.82;
+      }
+
+      .policy-section p {
+        margin: 0 0 14px;
+      }
+
+      .policy-section p:last-child {
+        margin-bottom: 0;
+      }
+
+      .policy-section ul,
+      .policy-section ol {
+        margin: 0;
+        padding-left: 1.3rem;
+      }
+
+      .policy-section li + li {
+        margin-top: 8px;
+      }
+
+      .support-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 28px;
+        align-items: center;
+        margin-top: 72px;
+        padding: clamp(26px, 5vw, 46px);
+        border: 1px solid color-mix(in srgb, var(--accent) 48%, var(--line));
+        border-radius: 24px;
+        background:
+          linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, var(--surface)), var(--surface));
+      }
+
+      .support-panel h2 {
+        margin: 8px 0 10px;
+        font-size: clamp(1.8rem, 4vw, 2.7rem);
+      }
+
+      .support-panel p {
+        max-width: 56ch;
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .mail-button {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        border-radius: 999px;
+        background: var(--accent-strong);
+        color: #ffffff;
+        font-weight: 800;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .mail-button:hover {
+        background: var(--accent);
+      }
+
+      footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 28px;
+        justify-content: space-between;
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.7;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      @media (max-width: 760px) {
+        .route-mark {
+          width: 72%;
+          opacity: 0.42;
+        }
+
+        .fact-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .fact:nth-child(2) {
+          border-right: 0;
+        }
+
+        .fact:nth-child(-n + 2) {
+          border-bottom: 1px solid var(--line);
+        }
+
+        .fact:nth-child(3) {
+          padding-left: 0;
+        }
+
+        .article-header,
+        .policy-section,
+        .support-panel {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .page {
+          width: min(100% - 28px, 960px);
+          padding-top: 16px;
+        }
+
+        .utility-bar {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 4px;
+        }
+
+        .hero {
+          margin-top: 14px;
+          padding: 24px 20px;
+          border-radius: 22px;
+        }
+
+        .app-icon {
+          width: 58px;
+          height: 58px;
+          border-radius: 14px;
+        }
+
+        h1 {
+          margin-top: 34px;
+        }
+
+        .fact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .fact,
+        .fact:first-child,
+        .fact:nth-child(3),
+        .fact:last-child {
+          padding: 15px 0;
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .fact:last-child {
+          border-bottom: 0;
+        }
+
+        article,
+        .support-panel {
+          margin-top: 52px;
+        }
+
+        .mail-button {
+          width: 100%;
+          white-space: normal;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          background: #0c1218;
+          color: #f3f6f7;
+          --background: #0c1218;
+          --surface: #141c24;
+          --surface-quiet: #18232d;
+          --text: #f3f6f7;
+          --muted: #b8c5cd;
+          --line: #31404b;
+          --accent: #ff7058;
+          --accent-strong: #ff806b;
+          --teal: #62d1c3;
+          --shadow: rgba(0, 0, 0, 0.34);
+        }
+
+        body {
+          background:
+            radial-gradient(circle at 78% 4%, rgba(255, 98, 71, 0.16), transparent 27rem),
+            var(--background);
+        }
+
+        .mail-button {
+          background: var(--accent);
+          color: #1f0d09;
+        }
+
+        .mail-button:hover {
+          background: #ff917e;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="utility-bar">
+        <a href="/">← Jeremy Xie Apps</a>
+        <nav class="language-links" aria-label="语言 / Language">
+          <a href="#zh-hans">中文</a>
+          <a href="#english">English</a>
+        </nav>
+      </div>
+
+      <header class="hero">
+        <svg class="route-mark" viewBox="0 0 420 520" aria-hidden="true">
+          <path class="route-glow" d="M355 28C302 72 354 128 278 164S168 198 218 252s96 90 26 128-122 34-174 112" />
+          <path class="route-line" d="M355 28C302 72 354 128 278 164S168 198 218 252s96 90 26 128-122 34-174 112" />
+          <circle class="route-point" cx="355" cy="28" r="8" />
+          <circle class="route-point" cx="70" cy="492" r="8" />
+        </svg>
+
+        <div class="brand">
+          <img
+            class="app-icon"
+            src="/purerun/app-icon.png"
+            width="72"
+            height="72"
+            alt="PureRun App 图标"
+          >
+          <div>
+            <p class="eyebrow">On-device running</p>
+            <p class="app-name">PureRun 极简跑步</p>
+          </div>
+        </div>
+
+        <h1>隐私政策与支持</h1>
+        <p class="hero-copy">
+          PureRun 专注于记录一件事：你的跑步。无需账号，没有广告和追踪；跑步轨迹、成绩与设置保存在你的 iPhone 上。
+        </p>
+
+        <section class="fact-grid" aria-label="隐私摘要">
+          <div class="fact">
+            <strong>无需账号</strong>
+            <span>不要求注册或登录</span>
+          </div>
+          <div class="fact">
+            <strong>本机保存</strong>
+            <span>跑步数据留在设备上</span>
+          </div>
+          <div class="fact">
+            <strong>不追踪</strong>
+            <span>没有广告或分析 SDK</span>
+          </div>
+          <div class="fact">
+            <strong>按需定位</strong>
+            <span>只为正在记录的跑步服务</span>
+          </div>
+        </section>
+      </header>
+
+      <nav class="jump-links" aria-label="页面内容">
+        <a href="#zh-hans">中文隐私政策</a>
+        <a href="#support-zh">使用支持</a>
+        <a href="#english">English policy</a>
+        <a href="mailto:furnace09@gmail.com">联系支持</a>
+      </nav>
+
+      <article id="zh-hans" lang="zh-Hans">
+        <header class="article-header">
+          <div>
+            <p class="section-label">中文 · ZH-HANS</p>
+            <h2>隐私政策</h2>
+          </div>
+          <p class="effective-date">最后更新：2026-07-29</p>
+        </header>
+
+        <section class="policy-section">
+          <h3>政策概述</h3>
+          <div>
+            <p>
+              PureRun 是一款在本机运行的跑步记录器。PureRun 没有账号、广告、分析或第三方追踪 SDK，也不会把你的定位、运动或跑步记录上传到开发者服务器。
+            </p>
+            <p>
+              按照 App Store 隐私标签的定义，PureRun 选择「不收集数据（Data Not Collected）」。
+            </p>
+          </div>
+        </section>
+
+        <section class="policy-section">
+          <h3>本机处理的数据</h3>
+          <div>
+            <p>经你授权后，PureRun 会在设备上处理以下数据以完成跑步记录：</p>
+            <ul>
+              <li>精确位置：测量距离并绘制跑步路线。</li>
+              <li>运动与健身读数：GPS 较弱时提供距离兜底，必要时把步数换算为近似距离。</li>
+              <li>跑步结果：距离、时长、平均配速、分段、卡路里估算和路线坐标。</li>
+              <li>App 设置：距离单位、外观、地图样式、语音提示、保持亮屏和引导完成状态。</li>
+            </ul>
+            <p>
+              路线与跑步结果使用 SwiftData 保存在 App 沙盒中，设置使用 UserDefaults 保存。原始步数不会保存。PureRun 不读取楼层、心率或 HealthKit 数据。
+            </p>
+          </div>
+        </section>
+
+        <section class="policy-section">
+          <h3>定位权限</h3>
+          <div>
+            <ul>
+              <li>PureRun 只请求「使用 App 期间」定位，不请求「始终」定位。</li>
+              <li>跑步页显示时，前台定位用于判断 GPS 是否就绪。</li>
+              <li>只有正在记录跑步时才启用后台定位，以便锁屏或切换 App 后继续记录。</li>
+              <li>暂停或结束跑步后，后台定位立即关闭；暂停期间的移动不会计入距离或路线。</li>
+              <li>定位点只保存在本机，不会上传或共享。</li>
+            </ul>
+            <p>如果拒绝定位权限，PureRun 仍可打开，但无法正常记录室外距离和路线。</p>
+          </div>
+        </section>
+
+        <section class="policy-section">
+          <h3>运动与健身权限</h3>
+          <div>
+            <p>
+              PureRun 只在跑步进行中使用 CMPedometer。它优先读取 iOS 给出的距离估算；如果该值不可用，可能读取步数并换算为近似距离。原始步数不会保存，也不会上传。
+            </p>
+            <p>如果拒绝运动与健身权限，GPS 记录仍可工作，但室内或弱 GPS 环境下的距离可能不准确。</p>
+          </div>
+        </section>
+
+        <section class="policy-section">
+          <h3>网络与第三方服务</h3>
+          <div>
+            <p>
+              PureRun 不包含第三方广告、分析、崩溃上报、社交或追踪 SDK，也不自行发起数据上传请求。
+            </p>
+            <p>
+              路线地图使用 Apple MapKit。MapKit 可能向 Apple 请求地图内容；这些请求由 Apple 的系统框架处理，并受 Apple 的隐私政策约束。
+            </p>
+          </div>
+        </section>
+
+        <section class="policy-section">
+          <h3>GPX 导出</h3>
+          <div>
+            <p>
+              你可以主动把单次跑步导出为 GPX 文件。文件通过 iOS 系统分享面板交给你选择的目标。导出后的处理取决于你选择的 App 或服务，请只分享给你信任的目的地。
+            </p>
+          </div>
+        </section>
+
+        <section class="policy-section">
+          <h3>删除与保留</h3>
+          <div>
+            <p>
+              你可以在训练日志中删除单次跑步。卸载 PureRun 会删除 App 沙盒中的跑步记录和设置。PureRun 未提供账号或云端同步，因此开发者没有服务器副本可供恢复或删除。
+            </p>
+          </div>
+        </section>
+
+        <section class="policy-section">
+          <h3>儿童隐私</h3>
+          <div>
+            <p>
+              PureRun 不是 Made for Kids App，不提供账号、广告、社交或用户生成内容，也不会把儿童或成人的数据发送给开发者。
+            </p>
+          </div>
+        </section>
+
+        <section class="policy-section">
+          <h3>政策变更</h3>
+          <div>
+            <p>
+              如果未来版本改变数据处理方式，PureRun 会在新功能上线前更新本政策、App 内说明和 App Store 隐私标签。
+            </p>
+          </div>
+        </section>
+
+        <section class="policy-section" id="support-zh">
+          <h3>使用支持</h3>
+          <div>
+            <ol>
+              <li>在 iOS「设置 → 隐私与安全性 → 定位服务 → PureRun」中选择「使用 App 期间」。</li>
+              <li>室内或弱 GPS 跑步时，请在「运动与健身」中允许 PureRun。</li>
+              <li>先开始跑步再锁屏；暂停会停止后台定位，暂停期间的移动不会计入跑步。</li>
+              <li>导出 GPX 时，在系统分享面板中选择「存储到文件」或你信任的目标。</li>
+            </ol>
+            <p>
+              联系支持时，请提供 iPhone 型号、iOS 版本、PureRun 版本和问题发生步骤。除非确有必要并且你愿意分享，请不要发送包含家庭地址或敏感路线的截图或 GPX。
+            </p>
+          </div>
+        </section>
+      </article>
+
+      <article id="english" lang="en">
+        <header class="article-header">
+          <div>
+            <p class="section-label">English · EN</p>
+            <h2>Privacy Policy</h2>
+          </div>
+          <p class="effective-date">Last updated: July 29, 2026</p>
+        </header>
+
+        <section class="policy-section">
+          <h3>Overview</h3>
+          <div>
+            <p>
+              PureRun is an on-device running tracker. It has no account, advertising, analytics, or third-party tracking SDKs, and it does not upload location, motion, or run records to a developer server.
+            </p>
+            <p>Under the App Store privacy-label definition, PureRun selects <strong>Data Not Collected</strong>.</p>
+          </div>
+        </section>
+
+        <section class="policy-section">
+          <h3>Data processed on the device</h3>
+          <div>
+            <p>With your permission, PureRun processes:</p>
+            <ul>
+              <li>Precise location to measure distance and draw a route.</li>
+              <li>Motion and fitness readings as a distance fallback when GPS is weak, including an approximate conversion from steps when needed.</li>
+              <li>Run results including distance, duration, average pace, splits, estimated calories, and route coordinates.</li>
+              <li>Preferences including unit, appearance, map style, spoken cues, screen behavior, and onboarding state.</li>
+            </ul>
+            <p>
+              Routes and run results are stored in the app sandbox with SwiftData. Preferences are stored with UserDefaults. Raw step counts are not stored. PureRun does not read floors, heart rate, or HealthKit data.
+            </p>
+          </div>
+        </section>
+
+        <section class="policy-section">
+          <h3>Location permission</h3>
+          <div>
+            <ul>
+              <li>PureRun requests When-In-Use authorization only, never Always.</li>
+              <li>Foreground location on the Run screen establishes GPS readiness.</li>
+              <li>Background location is enabled only while a run is actively recording so tracking can continue with the screen locked or another app open.</li>
+              <li>Pausing or ending a run disables background location. Paused movement is not added to distance or route.</li>
+              <li>Location points stay on the device and are not uploaded or shared.</li>
+            </ul>
+            <p>If permission is denied, PureRun can still open but cannot reliably record outdoor distance and route.</p>
+          </div>
+        </section>
+
+        <section class="policy-section">
+          <h3>Motion &amp; Fitness permission</h3>
+          <div>
+            <p>
+              PureRun uses CMPedometer only during an active run. It prefers the distance estimate supplied by iOS; if unavailable, it may read steps and convert them into approximate distance. Raw step counts are not stored or uploaded.
+            </p>
+            <p>If permission is denied, GPS tracking still works, but indoor or weak-GPS distance may be less accurate.</p>
+          </div>
+        </section>
+
+        <section class="policy-section">
+          <h3>Network and third-party services</h3>
+          <div>
+            <p>
+              PureRun contains no third-party advertising, analytics, crash-reporting, social, or tracking SDKs and makes no data-upload requests of its own.
+            </p>
+            <p>
+              Route maps use Apple MapKit. MapKit may request map content from Apple through the system framework; those requests are governed by Apple's privacy policy.
+            </p>
+          </div>
+        </section>
+
+        <section class="policy-section">
+          <h3>GPX export</h3>
+          <div>
+            <p>
+              You may choose to export one run as a GPX file through the iOS share sheet. The selected destination controls the file after export. Share only with destinations you trust.
+            </p>
+          </div>
+        </section>
+
+        <section class="policy-section">
+          <h3>Retention and deletion</h3>
+          <div>
+            <p>
+              You can delete an individual run from the Training Log. Uninstalling PureRun removes runs and settings from the app sandbox. Because PureRun has no account or cloud sync, the developer has no server copy to recover or delete.
+            </p>
+          </div>
+        </section>
+
+        <section class="policy-section">
+          <h3>Children's privacy</h3>
+          <div>
+            <p>
+              PureRun is not a Made for Kids app. It has no account, advertising, social features, or user-generated content and does not transmit a child's or adult's data to the developer.
+            </p>
+          </div>
+        </section>
+
+        <section class="policy-section">
+          <h3>Policy changes</h3>
+          <div>
+            <p>
+              If a future release changes data handling, PureRun will update this policy, the in-app explanation, and the App Store privacy label before the feature ships.
+            </p>
+          </div>
+        </section>
+
+        <section class="policy-section">
+          <h3>Support</h3>
+          <div>
+            <ol>
+              <li>In iOS Settings, confirm Privacy &amp; Security → Location Services → PureRun is set to While Using the App.</li>
+              <li>Allow Motion &amp; Fitness for PureRun when using indoor or weak-GPS distance fallback.</li>
+              <li>Start the run before locking the screen. Pausing disables background location and excludes paused movement.</li>
+              <li>For GPX export, choose Save to Files or another trusted destination in the system share sheet.</li>
+            </ol>
+            <p>
+              When contacting support, include the iPhone model, iOS version, PureRun version, and reproduction steps. Avoid sending a screenshot or GPX containing a home address or sensitive route unless necessary and you are comfortable sharing it.
+            </p>
+          </div>
+        </section>
+      </article>
+
+      <section class="support-panel" aria-labelledby="contact-title">
+        <div>
+          <p class="section-label">Support · 支持</p>
+          <h2 id="contact-title">需要帮助？</h2>
+          <p>邮件会由开发者本人阅读。请附上设备与系统版本，但不要附上不必要的敏感路线数据。</p>
+        </div>
+        <a class="mail-button" href="mailto:furnace09@gmail.com">furnace09@gmail.com</a>
+      </section>
+
+      <footer>
+        <p><strong>PureRun 极简跑步</strong> · Privacy &amp; Support</p>
+        <p>生效日期 / Effective date: 2026-07-29</p>
+        <p>© 2026 Jeremy Xie</p>
+      </footer>
+    </main>
+  </body>
+</html>
